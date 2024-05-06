@@ -1,0 +1,40 @@
+
+u = udpport;
+RemoteIPLab = "192.168.188.197";
+RemoteIPFernando = "192.168.2.178";
+RemoteIPKarlsruhefreifunknet = "10.214.50.250";
+RemoteIPRedmi = "192.168.51.212";
+
+write(u, "Hi ESP, hier ist Matlab", "char", RemoteIPRedmi, 4210);
+pause(5);
+counter = 1;
+ekg = [];
+data = zeros(1, 250);
+
+% Buffer Raw and filtered
+while (counter <= 60)
+
+    if(u.NumBytesAvailable)
+
+        data = read(u, 250, "uint16");
+        ekg = [ekg, data];     
+        counter = counter + 1
+    end
+end
+
+% Divide the ekg array into two arrays of 750 elements each
+ekg_raw = reshape(ekg(1:750),750,1);
+ekg_filtered = reshape(ekg(751:end),750,1);
+
+figure
+plot(ekg_raw)
+hold on
+plot(ekg_filtered)
+hold off
+
+xlabel('Muestras')
+ylabel('Amplitude')
+title('EKG Signal')
+legend('EKG sin filtrar', 'EKG filtrada')
+
+
