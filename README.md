@@ -53,8 +53,8 @@ Contributions are welcome! Feel free to improve this project by opening issues o
 
 ## Authors:
 
-- Fernando Gallardo
 - Christian Sanchez
+- Fernando Gallardo
 
 ---
 
