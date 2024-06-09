@@ -5,7 +5,6 @@
 ## Description:
 
 This project involves the development of an electrocardiogram using the ESP32 microcontroller. The device captures the heart's electrical signals and displays them in real-time through a graphical interface. It has been implemented using the Visual Studio Code development environment with the PlatformIO plugin, which facilitates programming and project management.
-![ECG-Recording-gif](https://github.com/sanchez-chris/ECG-ESP8266/assets/57319889/d0344881-9fce-4b80-b39a-f86269bf5ec2)
 
 ---
 
